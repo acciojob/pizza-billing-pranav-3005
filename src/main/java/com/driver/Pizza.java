@@ -11,11 +11,13 @@ public class Pizza {
         if(isVeg)
         {
             price+=300;
+            bill="Base Price Of The Pizza: "+price+"\n";
 
         }
         else
         {
             price+=400;
+            bill="Base Price Of The Pizza: "+price+"\n";
         }
         // your code goes here
     }
@@ -25,12 +27,17 @@ public class Pizza {
     }
 
     public int getPrice(){
+
         return this.price;
     }
 
     public void addExtraCheese(){
+        if(bill==null)
+        {
+            bill="Base Price Of The Pizza: "+price+"\n";
+        }
         // your code goes here
-        bill="Extra Cheese Added: 80\n";
+        bill+="Extra Cheese Added: 80\n";
         price+=80;
 
     }
@@ -57,6 +64,7 @@ public class Pizza {
 
     public String getBill(){
         // your code goes here
+        bill+="Total Price: "+price;
         return this.bill;
     }
 }
